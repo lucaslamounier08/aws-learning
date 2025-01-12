@@ -1,6 +1,6 @@
-package com.lucaslamounier.aws.controller;
+package com.lucaslamounier.aws.s3.controller;
 
-import com.lucaslamounier.aws.port.StoragePort;
+import com.lucaslamounier.aws.s3.port.StoragePort;
 import io.awspring.cloud.s3.S3Resource;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

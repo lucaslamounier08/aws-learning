@@ -1,4 +1,4 @@
-package com.lucaslamounier.aws.port;
+package com.lucaslamounier.aws.s3.port;
 
 import io.awspring.cloud.s3.S3Resource;
 import org.springframework.web.multipart.MultipartFile;

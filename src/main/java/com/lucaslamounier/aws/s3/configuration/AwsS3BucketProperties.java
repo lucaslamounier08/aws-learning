@@ -1,6 +1,6 @@
-package com.lucaslamounier.aws.configuration;
+package com.lucaslamounier.aws.s3.configuration;
 
-import com.lucaslamounier.aws.validator.annotation.BucketExists;
+import com.lucaslamounier.aws.s3.validator.annotation.BucketExists;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;

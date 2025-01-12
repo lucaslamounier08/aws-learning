@@ -1,7 +1,7 @@
-package com.lucaslamounier.aws.service;
+package com.lucaslamounier.aws.s3.service;
 
-import com.lucaslamounier.aws.configuration.AwsS3BucketProperties;
-import com.lucaslamounier.aws.port.StoragePort;
+import com.lucaslamounier.aws.s3.configuration.AwsS3BucketProperties;
+import com.lucaslamounier.aws.s3.port.StoragePort;
 import io.awspring.cloud.s3.S3Resource;
 import io.awspring.cloud.s3.S3Template;
 import lombok.RequiredArgsConstructor;

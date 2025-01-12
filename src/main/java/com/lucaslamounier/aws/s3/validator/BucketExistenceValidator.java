@@ -1,6 +1,6 @@
-package com.lucaslamounier.aws.validator;
+package com.lucaslamounier.aws.s3.validator;
 
-import com.lucaslamounier.aws.validator.annotation.BucketExists;
+import com.lucaslamounier.aws.s3.validator.annotation.BucketExists;
 import io.awspring.cloud.s3.S3Template;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
