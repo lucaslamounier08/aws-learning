@@ -37,7 +37,7 @@ class StorageServiceIntegrationTest {
     static {
         localStackContainer = new LocalStackContainer(DockerImageName.parse("localstack/localstack:3.4"))
                 .withCopyFileToContainer(MountableFile.forClasspathResource("init-s3-bucket.sh", 0744), "/etc/localstack/init/ready.d/init-s3-bucket.sh")
-                .withServices(LocalStackContainer.Service.S3)
+                .withServices(LocalStackContainer.Service.S3, LocalStackContainer.Service.SQS)
                 .waitingFor(Wait.forLogMessage(".*Executed init-s3-bucket.sh.*", 1));
         localStackContainer.start();
     }
@@ -49,8 +49,10 @@ class StorageServiceIntegrationTest {
         registry.add("spring.cloud.aws.s3.region", localStackContainer::getRegion);
         registry.add("spring.cloud.aws.s3.endpoint", localStackContainer::getEndpoint);
 
-        // custom properties
         registry.add("app.aws.s3.bucketName", () -> BUCKET_NAME);
+
+        registry.add("app.aws.sqs.endpoint", localStackContainer::getEndpoint);
+        registry.add("app.aws.sqs.queue-name", () -> "sqsQueueName");
     }
 
     @Test
